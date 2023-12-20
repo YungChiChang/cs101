@@ -1,21 +1,18 @@
 #include <stdio.h>
 
-int main()
-{
+int main(){
     double PI=4.0;
-    long fixpi=314159;
+    long fixpi=3141592;
     long calcpi=1;
     int i;
-    float s=1.0;
+    float sign=1.0;
     
-    for (i=1; i<=300000 && fixpi!=calcpi ; i++)
-    {
-        PI = PI-s*4.0/(2*i+1);
-        s = -s;
-        calcpi = (long)(PI*100000);
+    for(i=1;i<=1000000&&fixpi!=calcpi;i++){
+        PI=PI-sign*4.0/(2*i+1);
+        sign=sign*(-1);
+        calcpi=(long)(PI*1000000);
     }
-    
-    printf("times=%d\t value=%.5f\n",i,PI);
+    printf("times=%d\tvalue=%7.5f\n",i,PI);
     
     return 0;
 }
