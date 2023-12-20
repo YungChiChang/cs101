@@ -1,17 +1,18 @@
 #include <stdio.h>
 
-int main(){
-    double PI=4.0;
-    long calcpi=1;
-    int i;
-    float sign=1.0;
-    for (i=1; i<=1000000 && (calcpi>3141594 || calcpi<3141590) ; i++){
-        PI = PI-sign*4.0/(2*i+1);
-        sign = sign*(-1);
-        calcpi = (long)(PI*1000000);
+int main() {
+    int i = 12345;
+
+    if (i > 0) {
+        
+        int thousands = (i / 1000) % 10;
+        int units = i % 10;
+        i = i - thousands * 1000 + units * 1000 + thousands - units;
+        printf(" %d\n", i);
+    } 
+    else {
+        printf("\n");
     }
-    
-    printf("times=%d \tvalue=%7.5f \n",i,PI);
-    
+
     return 0;
 }
